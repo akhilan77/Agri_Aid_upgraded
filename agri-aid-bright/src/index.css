@@ -1,0 +1,139 @@
+/* Global styles — Minimal design system */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Minimal design system.
+  Philosophy: white space > colour, typography > decoration.
+  Single accent: zinc-900 (near-black). No gradients, no colour shadows.
+  All values in HSL.
+*/
+
+@layer base {
+  :root {
+    /* ── Surfaces ── */
+    --background:         0 0% 99%;        /* near-white page bg */
+    --foreground:         0 0% 9%;         /* near-black text */
+
+    --card:               0 0% 100%;
+    --card-foreground:    0 0% 9%;
+
+    --popover:            0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    /* ── Primary — emerald green ── */
+    --primary:            142 71% 38%;    /* emerald green */
+    --primary-foreground: 0 0% 100%;      /* white text on green */
+    --primary-light:      142 71% 50%;
+    --primary-dark:       142 71% 28%;
+
+    /* ── Accent — neutral hover bg ── */
+    --accent:             0 0% 96%;
+    --accent-foreground:  0 0% 9%;
+    --green:              142 71% 38%;    /* alias for direct use */
+    --ring:               142 71% 38%;    /* focus ring = green */
+
+    /* ── Secondary — mid-grey ── */
+    --secondary:          0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --secondary-light:    0 0% 98%;
+    --secondary-dark:     0 0% 88%;
+
+    /* ── Neutrals ── */
+    --muted:              0 0% 96%;
+    --muted-foreground:   0 0% 45%;
+
+    /* ── Utility ── */
+    --destructive:        0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border:             0 0% 90%;
+    --input:              0 0% 94%;
+
+    /* ── No gradients — flat backgrounds only ── */
+    --gradient-primary:   none;
+    --gradient-secondary: none;
+    --gradient-hero:      none;
+    --gradient-success:   none;
+
+    /* ── Subtle shadows (no colour tint) ── */
+    --shadow-soft: 0 1px 4px 0 hsl(0 0% 0% / 0.06);
+    --shadow-card: 0 1px 8px 0 hsl(0 0% 0% / 0.07);
+    --shadow-glow: none;
+
+    /* ── Shape ── */
+    --radius: 0.375rem;   /* 6px — tight, purposeful */
+
+    /* ── Sidebar (inherits neutral palette) ── */
+    --sidebar-background:          0 0% 98%;
+    --sidebar-foreground:          0 0% 20%;
+    --sidebar-primary:             142 71% 38%;
+    --sidebar-primary-foreground:  0 0% 100%;
+    --sidebar-accent:              142 60% 94%;
+    --sidebar-accent-foreground:   142 60% 20%;
+    --sidebar-border:              0 0% 90%;
+    --sidebar-ring:                142 71% 45%;
+  }
+
+  /* Dark mode — ink on dark paper, green accent carried through */
+  .dark {
+    --background:         0 0% 7%;
+    --foreground:         0 0% 95%;
+
+    --card:               0 0% 10%;
+    --card-foreground:    0 0% 95%;
+
+    --popover:            0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* ── Primary — lighter green for dark bg ── */
+    --primary:            142 60% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light:      142 60% 58%;
+    --primary-dark:       142 60% 36%;
+
+    --accent:             0 0% 14%;
+    --accent-foreground:  0 0% 95%;
+    --green:              142 60% 48%;
+    --ring:               142 60% 48%;
+
+    --secondary:          0 0% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --secondary-light:    0 0% 18%;
+    --secondary-dark:     0 0% 10%;
+
+    --muted:              0 0% 14%;
+    --muted-foreground:   0 0% 55%;
+
+    --destructive:        0 62% 38%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border:             0 0% 18%;
+    --input:              0 0% 16%;
+
+    --shadow-soft: 0 1px 4px 0 hsl(0 0% 0% / 0.25);
+    --shadow-card: 0 1px 8px 0 hsl(0 0% 0% / 0.30);
+
+    --sidebar-background:          0 0% 9%;
+    --sidebar-foreground:          0 0% 85%;
+    --sidebar-primary:             0 0% 95%;
+    --sidebar-primary-foreground:  0 0% 9%;
+    --sidebar-accent:              142 40% 14%;
+    --sidebar-accent-foreground:   142 60% 80%;
+    --sidebar-border:              0 0% 16%;
+    --sidebar-ring:                142 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
